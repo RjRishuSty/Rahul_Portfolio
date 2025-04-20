@@ -1,5 +1,5 @@
 import React from "react";
-import { menuLinks } from "../../menulinks";
+import { links } from "../../links";
 import { Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router";
@@ -24,7 +24,7 @@ const itemVariants = {
 const MenuLinks = () => {
   return (
     <MotionBox initial="initial" animate="animate" sx={{mr:2}}>
-      {menuLinks.map((link, i) => (
+      {links.map((link, i) => (
         <NavLink key={link.label} to={link.path}>
           {({ isActive }) => (
             <MotionButton

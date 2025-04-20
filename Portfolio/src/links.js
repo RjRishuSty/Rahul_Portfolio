@@ -1,4 +1,4 @@
-export const menuLinks = [
+export const links = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Portfolio", path: "/portfolio" },
