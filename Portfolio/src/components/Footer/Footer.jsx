@@ -3,11 +3,12 @@ import React from "react";
 import { footer } from "../../footer";
 
 const Footer = () => {
+  console.log('Footer')
   return (
     <Stack component='footer'
       sx={{
         border: "2px solid blue",
-        position: "absolute",
+        position:'relative',
         bottom: 0,
         left: 0,
         width: "100%",

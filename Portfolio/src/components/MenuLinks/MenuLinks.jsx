@@ -1,8 +1,9 @@
 import React from "react";
-import { links } from "../../links";
 import { Box, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router";
+import { navItems } from "../../navItems";
+
 
 const MotionButton = motion.create(Button);
 const MotionBox = motion.create(Box);
@@ -21,19 +22,31 @@ const itemVariants = {
   }),
 };
 
-const MenuLinks = () => {
+const MenuLinks = ({ useIn }) => {
+  const sidebar = useIn === "sidebar";
   return (
-    <MotionBox initial="initial" animate="animate" sx={{mr:2}}>
-      {links.map((link, i) => (
+    <MotionBox
+      initial="initial"
+      animate="animate"
+      sx={{
+        mr: 2,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "start",
+        flexDirection: sidebar ? "column" : "row",
+      }}
+    >
+      {navItems.map((link, i) => (
         <NavLink key={link.label} to={link.path}>
           {({ isActive }) => (
             <MotionButton
+              startIcon={sidebar ? link.icon : null}
               key={link.label}
               custom={i}
               variants={itemVariants}
               initial="initial"
               animate="animate"
-              whileHover={!isActive?{ scale: 1.1 }:{}}
+              whileHover={!isActive ? { scale: 1.1 } : {}}
               sx={{
                 color: isActive ? "animation.active" : "text.main",
                 textTransform: isActive ? "uppercase" : "capitalize",
@@ -56,4 +69,4 @@ const MenuLinks = () => {
   );
 };
 
-export default MenuLinks;
+export default React.memo(MenuLinks);

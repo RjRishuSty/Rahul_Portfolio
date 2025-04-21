@@ -7,11 +7,15 @@ import { AppBar, Box, IconButton, Toolbar, useMediaQuery } from "@mui/material";
 import AppMode from "../AppMode/AppMode";
 import MenuLinks from "../MenuLinks/MenuLinks";
 import MenuTwoToneIcon from "@mui/icons-material/MenuTwoTone";
+import CloseTwoToneIcon from "@mui/icons-material/CloseTwoTone";
 import { motion } from "framer-motion";
+import { useState, useCallback } from "react";
+import Sidebar from "../Sidebar/Sidebar";
 
-// Elevation effect on scroll
+// ElevationScroll component
 function ElevationScroll(props) {
   const { children, window } = props;
+
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -31,11 +35,17 @@ ElevationScroll.propTypes = {
   children: PropTypes.element.isRequired,
   window: PropTypes.func,
 };
+
 const MotionMenuButton = motion.create(IconButton);
 
 const Header = (props) => {
+  const [toggleMenu, setToggleMenu] = useState(false);
   const isMobile = useMediaQuery("(max-width:800px)");
-  console.log(isMobile);
+
+  const handleToggleMenu = useCallback(() => {
+    setToggleMenu((prev) => !prev);
+  }, []);
+  console.log("header");
   return (
     <Box component="nav">
       <CssBaseline />
@@ -45,13 +55,32 @@ const Header = (props) => {
             <Logo />
             {isMobile ? (
               <>
-                <MotionMenuButton
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                >
+              {toggleMenu && <Sidebar/>}
+              <MotionMenuButton
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                whileHover={{
+                  scale: 1.2,
+                  boxShadow: "0px 0px 8px rgba(0,0,0,0.3)",
+                  transition: {
+                    duration: 0.2,
+                    ease: "easeOut",
+                  },
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 15,
+                  delay: 0.3,
+                }}
+                onClick={handleToggleMenu}
+              >
+                {toggleMenu ? (
+                  <CloseTwoToneIcon fontSize="large" sx={{ color: "#fff" }} />
+                ) : (
                   <MenuTwoToneIcon fontSize="large" sx={{ color: "#fff" }} />
-                </MotionMenuButton>
+                )}
+              </MotionMenuButton>
               </>
             ) : (
               <>
@@ -66,4 +95,4 @@ const Header = (props) => {
   );
 };
 
-export default Header;
+export default React.memo(Header);
