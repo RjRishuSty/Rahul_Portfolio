@@ -4,7 +4,7 @@ import HeroSection from "../../components/HeroSection/HeroSection";
 
 const Home = () => {
   return (
-    <Stack component="main" sx={{ border: "5px solid blue", mt: 8}}>
+    <Stack component="main" sx={{ border: "0px solid blue", mt: 8}}>
       <HeroSection />
     </Stack>
   );

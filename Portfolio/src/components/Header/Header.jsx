@@ -45,7 +45,7 @@ const Header = (props) => {
   const handleToggleMenu = useCallback(() => {
     setToggleMenu((prev) => !prev);
   }, []);
-  console.log("header");
+  
   return (
     <Box component="nav">
       <CssBaseline />
