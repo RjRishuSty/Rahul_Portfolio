@@ -1,12 +1,13 @@
-import { Container, Stack } from '@mui/material'
-import React from 'react'
+import { Container, Stack } from "@mui/material";
+import React from "react";
+import HeroSection from "../../components/HeroSection/HeroSection";
 
 const Home = () => {
   return (
-    <Stack sx={{border:'2px solid blue',py:10,mt:7,}}>
-      <Container sx={{height:'100vh'}}></Container>
+    <Stack component="main" sx={{ border: "5px solid blue", mt: 8}}>
+      <HeroSection />
     </Stack>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
