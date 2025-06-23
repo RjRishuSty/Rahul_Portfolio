@@ -7,7 +7,7 @@ import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { motion } from "framer-motion";
 import React from "react";
 import { Box, IconButton, useMediaQuery } from "@mui/material";
-import { flexStart } from "./styles/custom_styles";
+import { flexStart } from "../styles/custom_styles";
 
 const socialMediaIcons = [
   {

@@ -4,7 +4,7 @@ import heroImg from "../../assets/hero.jpg";
 import React from "react";
 import TypingText from "../TypingText/TypingText";
 import { flexCenter, flexStart } from "../../styles/custom_styles";
-import SocialMediaIcons from "../../SocialMediaIcons";
+import SocialMediaIcons from "../SocialMediaIcons";
 
 // Animation variants
 const containerVariant = {

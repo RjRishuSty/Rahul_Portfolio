@@ -2,7 +2,7 @@ import { Box, IconButton, Stack } from "@mui/material";
 import React from "react";
 import AppMode from "../AppMode/AppMode";
 import { motion } from "framer-motion";
-import SocialMediaIcons from "../../SocialMediaIcons";
+import SocialMediaIcons from "../SocialMediaIcons";
 
 const MotionIconButton = motion(IconButton);
 
