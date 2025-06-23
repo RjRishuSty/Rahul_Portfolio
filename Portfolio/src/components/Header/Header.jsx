@@ -40,7 +40,7 @@ const MotionMenuButton = motion.create(IconButton);
 
 const Header = (props) => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const isMobile = useMediaQuery("(max-width:800px)");
+  const isMobile = useMediaQuery("(max-width:900px)");
 
   const handleToggleMenu = useCallback(() => {
     setToggleMenu((prev) => !prev);
@@ -50,7 +50,7 @@ const Header = (props) => {
     <Box component="nav">
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar position="fixed" sx={{ backgroundColor: "primary.main" }}>
+        <AppBar position="fixed" sx={{p:1, backgroundColor: "primary.main" }}>
           <Toolbar>
             <Logo />
             {isMobile ? (

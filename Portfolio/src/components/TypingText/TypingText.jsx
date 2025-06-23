@@ -4,7 +4,10 @@ import { Typography, useMediaQuery } from "@mui/material";
 const TypingText = ({ text = "", speed = 100, ...props }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const isMobile = useMediaQuery("(max-width:523px)");
+  const smallMobile = useMediaQuery("(max-width:440px)");
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const isTablet = useMediaQuery("(max-width:900px)");
+   const isLaptop = useMediaQuery("(max-width:1014px)");
 
   useEffect(() => {
     if (!text || currentIndex >= text.length) return;
@@ -19,13 +22,12 @@ const TypingText = ({ text = "", speed = 100, ...props }) => {
 
   return (
     <Typography
-      component="h4"
-      variant={isMobile?"h6":"h4"}
+      variant={smallMobile?"h4":isMobile?"h2":isTablet?"h2":isLaptop?"h2":"h1"}
       gutterBottom
       sx={{
         textTransform: "uppercase",
-        fontWeight: 600,
-        color: "text.main",
+        fontWeight:800,
+        color: "text.primary",
       }}
       {...props}
     >

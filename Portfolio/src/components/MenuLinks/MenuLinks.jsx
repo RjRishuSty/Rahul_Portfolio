@@ -48,14 +48,15 @@ const MenuLinks = ({ useIn }) => {
               animate="animate"
               whileHover={!isActive ? { scale: 1.1 } : {}}
               sx={{
-                color: isActive ? "animation.active" : "text.main",
+                // border:'3px solid black',
+                color: isActive ? "text.secondary" : "text.primary",
                 textTransform: isActive ? "uppercase" : "capitalize",
                 mx: 1.2,
-                fontWeight: isActive ? 500 : 200,
+                fontWeight:600,
                 fontSize: "1rem",
                 ...(!isActive && {
                   "&:hover": {
-                    color: "animation.hover",
+                    backgroundColor:'redanimation.active'
                   },
                 }),
               }}

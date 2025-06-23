@@ -1,31 +1,22 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
-import DeblurIcon from "@mui/icons-material/Deblur";
 import { motion } from "framer-motion";
+import logo from "../../assets/logo.png";
 
-const MotionIcon = motion.create(DeblurIcon);
-const MotionTypography = motion.create(Typography);
+const MotionImgBox = motion.create(Box);
 
 const Logo = () => {
-  console.log("logo");
   return (
     <Box display="flex" alignItems="center" sx={{ flexGrow: 1 }}>
-      <MotionIcon
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        fontSize="large"
-        sx={{ color: "animation.icon", mr: 0.5 }}
-      />
-      <MotionTypography
+      <MotionImgBox
+        component="img"
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-        variant="h6"
-        color="#fff"
-      >
-        Rahul Designs
-      </MotionTypography>
+        src={logo}
+        alt="Rahul Portfolio"
+        sx={{width:"auto",height:'60px'}}
+      />
     </Box>
   );
 };

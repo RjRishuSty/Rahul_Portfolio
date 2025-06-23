@@ -16,26 +16,26 @@ export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#FFFFFF",
+      main: "#3398cc", // Blue from photo background
     },
     secondary: {
-      main: "#FFF",
+      main: "#CDDB1B", // Lime Green circle
     },
     background: {
       default: "#FFFFFF",
-      main: "#000",
-      primary: "#1eb997",
+      main: "#E5E5E5", // Logo background gray
+      primary: "#3398cc", // Same blue
     },
     text: {
-      default:'#ffff',
-      main: "#000",
-      primary: "#1eb997",
-      secondary: "#333333"
+      default: "#1C1C1C", // Shirt black
+      main: "#2B2B2B",    // Logo black
+      primary: "#fff", // Logo red
+      secondary: "#C52C26"
     },
     animation: {
-      active: "#ffff00",
-      hover: "#00cc00",
-      icon: "#000",
+      active: "#CDDB1B",  // Active lime
+      hover: "#2EA8D6",   // Cyan blue from stripes
+      icon: "#2B2B2B",    // Logo black
     },
   },
   ...commonSettings,
@@ -45,27 +45,28 @@ export const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#4d0000",
+      main: "#C52C26", // Logo red
     },
     secondary: {
-      main: "#fff",
+      main: "#CDDB1B", // Lime circle
     },
     background: {
-      default: "#000000",
-      main: "#fff",
-      primary: "#4d0000",
+      default: "#1C1C1C", // Deep black from shirt
+      main: "#2B2B2B",    // Logo black
+      primary: "#000000",
     },
     text: {
-      default:'#ffff',
-      main: "#1eb997",
-      primary: "#fff",
-      secondary: "#fff"
+      default: "#fff",   // White stripe
+      main: "#fff",      // Highlight lime
+      primary: "#000",
+      secondary: "#2EA8D6", // Silver crown
     },
     animation: {
-      active: "#ffff00",
-      hover: "#00cc00",
-      icon: "#fff",
+      active: "#CDDB1B",   // Active highlight
+      hover: "#2EA8D6",    // Cyan stripe
+      icon: "#FFFFFF",
     },
   },
   ...commonSettings,
 });
+ 
